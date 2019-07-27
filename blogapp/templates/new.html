@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block contents %}
+<body>
+    <br>
+    <div class="container">
+        <!-- form.py 이후 템플릿 -->
+        <form method = "POST">
+            {% csrf_token %}
+            <table>
+                {{form.as_table}}
+            </table>
+            <br>
+            <input class="btn btn-dark" type="submit" value="제출하기">
+        </form>
+
+        <!-- form.py 없을 때 템플릿 -->
+        <!-- <form action="%{% url 'create' %}%">
+            <h4>Title : </h4>
+            <input type="text" name="title">
+            <br><br>
+            <h4>content : </h4>
+            <textarea cols=40 rows=10 name="body"></textarea>
+            <br><br>
+            <input class="btn btn-dark" type="submit" value="submit">
+        </form> -->
+    </div>
+</body>
+{% endblock %}
